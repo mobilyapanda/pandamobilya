@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hayalim Dekor | Mutfak Tasarım Simülatörü</title>
+    <title>Hayalim Dekor | Özel Tasarım Mutfak ve Mobilya İmalatı - Bingöl</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -18,25 +18,9 @@
         .category-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border-radius: 2rem; overflow: hidden; background: white; border: 1px solid #f1f5f9; }
         .category-card:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
         .header-icon { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid #e2e8f0; }
-        .square-video-container { width: 100%; max-width: 600px; margin: 0 auto; aspect-ratio: 1 / 1; border-radius: 2.5rem; overflow: hidden; border: 8px solid white; background-color: #000; }
+        .square-video-container { width: 100%; max-width: 600px; margin: 0 auto; aspect-ratio: 1 / 1; border-radius: 2.5rem; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); border: 8px solid white; background-color: #000; }
         .vertical-video { aspect-ratio: 9/16; width: 100%; object-fit: cover; border-radius: 1.5rem; border: 4px solid #334155; }
-        .map-container { width: 100%; height: 500px; border-radius: 2.5rem; overflow: hidden; border: 8px solid white; }
-
-        /* SİMÜLATÖR ÖZEL AYARLARI */
-        .simulator-wrapper { position: relative; width: 100%; max-width: 800px; margin: 0 auto; border-radius: 2.5rem; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1); border: 8px solid white; }
-        .kitchen-image { width: 100%; display: block; }
-        .color-layer { 
-            position: absolute; 
-            top: 0; left: 0; 
-            width: 100%; height: 100%; 
-            mix-blend-mode: multiply; /* Bu mod beyaz yerleri boyar, siyah yerlere dokunmaz */
-            pointer-events: none; 
-            transition: background-color 0.6s ease;
-            background-color: transparent; 
-        }
-        .color-dot { width: 45px; height: 45px; border-radius: 50%; border: 3px solid white; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .color-dot:hover { transform: scale(1.1); }
-        .color-dot.active { border-color: #D4AF37; transform: scale(1.15); }
+        .map-container { width: 100%; height: 500px; border-radius: 2.5rem; overflow: hidden; box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); border: 8px solid white; }
     </style>
 </head>
 <body class="text-slate-900">
@@ -60,45 +44,6 @@
         <div class="w-16 h-0.5 bg-gold mx-auto"></div>
     </section>
 
-    <section class="max-w-5xl mx-auto px-6 py-16 mb-12 bg-white rounded-[3rem] shadow-sm border border-slate-100">
-        <div class="text-center mb-10">
-            <h3 class="serif text-3xl font-bold text-slate-800 mb-2">Mutfak Renk Simülatörü</h3>
-            <p class="text-slate-400 text-xs uppercase tracking-widest italic font-semibold">Beyaz mutfağınızı tek tıkla renklendirin</p>
-        </div>
-
-        <div class="simulator-wrapper">
-            <img src="simulator-base.jpg" alt="Mutfak" class="kitchen-image">
-            <div id="overlayLayer" class="color-layer"></div>
-        </div>
-
-        <div class="flex flex-wrap justify-center gap-8 mt-10">
-            <div class="flex flex-col items-center gap-2">
-                <button onclick="applyColor('transparent', this)" class="color-dot active bg-white"></button>
-                <span class="text-[10px] font-bold uppercase tracking-tighter">Orijinal</span>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-                <button onclick="applyColor('#353b48', this)" class="color-dot bg-[#353b48]"></button>
-                <span class="text-[10px] font-bold uppercase tracking-tighter">Antrasit</span>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-                <button onclick="applyColor('#d1ccc0', this)" class="color-dot bg-[#d1ccc0]"></button>
-                <span class="text-[10px] font-bold uppercase tracking-tighter">Kaşmir</span>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-                <button onclick="applyColor('#c5a059', this)" class="color-dot bg-[#c5a059]"></button>
-                <span class="text-[10px] font-bold uppercase tracking-tighter">Altın/Meşe</span>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-                <button onclick="applyColor('#747d8c', this)" class="color-dot bg-[#747d8c]"></button>
-                <span class="text-[10px] font-bold uppercase tracking-tighter">Gri</span>
-            </div>
-            <div class="flex flex-col items-center gap-2">
-                <button onclick="applyColor('#2f3542', this)" class="color-dot bg-[#2f3542]"></button>
-                <span class="text-[10px] font-bold uppercase tracking-tighter">Siyah</span>
-            </div>
-        </div>
-    </section>
-
     <section class="max-w-6xl mx-auto px-4 py-4 mb-8">
         <div class="square-video-container">
             <video class="w-full h-full object-cover" controls poster="video-kapak.jpg" playsinline>
@@ -117,13 +62,13 @@
                 </div>
             </div>
             <div class="space-y-6">
-                <h3 class="serif text-4xl font-bold text-slate-800 italic">Biz Kimiz?</h3>
-                <p class="text-slate-600 leading-relaxed text-lg">
+                <h3 class="serif text-4xl font-bold text-slate-800 italic uppercase">Biz Kimiz?</h3>
+                <p class="text-slate-600 leading-relaxed text-lg italic">
                     Bingöl'de **Hayalim Dekor** olarak, modern teknolojiyi geleneksel usta işçiliğiyle birleştiriyoruz. Kullanım kolaylığı ve estetiği ön planda tutan mobilyalar üretiyoruz.
                 </p>
-                <div class="pt-4 grid grid-cols-2 gap-4 text-center text-slate-800">
-                    <div class="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm"><i class="fas fa-hammer gold-accent mb-2"></i><p class="font-bold text-[10px] uppercase">Kalite</p></div>
-                    <div class="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm"><i class="fas fa-pencil-ruler gold-accent mb-2"></i><p class="font-bold text-[10px] uppercase">Proje</p></div>
+                <div class="pt-4 grid grid-cols-2 gap-4 text-center text-slate-800 uppercase">
+                    <div class="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm"><i class="fas fa-hammer gold-accent mb-2"></i><p class="font-bold text-[10px]">Kalite</p></div>
+                    <div class="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm"><i class="fas fa-pencil-ruler gold-accent mb-2"></i><p class="font-bold text-[10px]">Proje</p></div>
                 </div>
             </div>
         </div>
@@ -131,37 +76,38 @@
 
     <div class="max-w-7xl mx-auto px-4 py-16 bg-white/50 rounded-[4rem] mb-20 shadow-inner">
         <div class="text-center mb-16 px-4">
-            <h3 class="serif text-4xl font-bold mb-4 uppercase text-slate-800">Koleksiyonlarımız</h3>
+            <h3 class="serif text-4xl font-bold mb-4 uppercase text-slate-800 uppercase">Koleksiyonlarımız</h3>
             <p class="text-slate-400 italic text-sm tracking-widest uppercase">Modelleri İnceleyin</p>
         </div>
+        
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="categoryGrid">
             </div>
     </div>
 
     <section class="max-w-6xl mx-auto px-6 py-20 bg-white rounded-[3rem] shadow-sm mb-12">
         <div class="text-center mb-12">
-            <h3 class="serif text-4xl font-bold text-slate-800 uppercase mb-4 italic">Bize Ulaşın</h3>
-            <p class="text-slate-500 italic text-sm uppercase tracking-[0.2em]">Mağazamıza ve Atölyemize Bekleriz</p>
+            <h3 class="serif text-4xl font-bold text-slate-800 uppercase mb-4 italic uppercase">Bize Ulaşın</h3>
+            <p class="text-slate-500 italic text-sm uppercase tracking-[0.2em]">Mağazamıza Bekleriz</p>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div class="space-y-8">
                 <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100">
-                    <h5 class="font-bold uppercase text-[10px] text-gold tracking-widest mb-4">İletişim Bilgileri</h5>
-                    <p class="text-slate-700 font-medium italic"><i class="fas fa-map-marker-alt mr-2 text-slate-400"></i> Ekinyolu Yeni Sanayi Sitesi, 3. Kısım No:123/5C, Bingöl/Merkez</p>
+                    <h5 class="font-bold uppercase text-[10px] text-gold tracking-widest mb-4 uppercase">İletişim Bilgileri</h5>
+                    <p class="text-slate-700 font-medium italic uppercase tracking-tighter"><i class="fas fa-map-marker-alt mr-2 text-slate-400"></i> Ekinyolu Yeni Sanayi Sitesi, 3. Kısım No:123/5C, Bingöl/Merkez</p>
                     <p class="text-slate-800 font-bold text-xl mt-4"><i class="fas fa-phone mr-2 text-slate-400 text-sm"></i> 0546 630 99 19</p>
                 </div>
                 <div class="bg-slate-900 p-8 rounded-[2rem] text-white">
                     <h5 class="font-bold uppercase text-[10px] gold-accent tracking-widest mb-6">Çalışma Saatleri</h5>
                     <div class="space-y-3 text-xs uppercase opacity-80">
-                        <div class="flex justify-between"><span>Pzt-Cmt</span><span>08:30 – 17:00</span></div>
-                        <div class="flex justify-between text-red-400"><span>Pazar</span><span>KAPALI</span></div>
+                        <div class="flex justify-between"><span>Pazartesi - Cumartesi</span><span>08:30 – 17:00</span></div>
+                        <div class="flex justify-between text-red-400 font-bold"><span>Pazar</span><span>KAPALI</span></div>
                     </div>
                 </div>
-                <a href="https://www.google.com/maps/dir//HAYAL%C4%B0M+Grup+mobilya+ve+dizayn+Ekinyolu+Merkez+Bing%C3%B6l" target="_blank" class="bg-gold text-white block text-center py-5 rounded-2xl font-bold uppercase text-xs tracking-widest shadow-xl">Yol Tarifi Al</a>
+                <a href="https://maps.google.com/?q=HAYALİM+Grup+mobilya+ve+dizayn+Bingöl" target="_blank" class="bg-gold text-white block text-center py-5 rounded-2xl font-bold uppercase text-xs tracking-widest hover:scale-105 transition shadow-xl">Yol Tarifi Al</a>
             </div>
             <div class="lg:col-span-2">
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12461.341852028687!2d40.5614946!3d38.8960647!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4070cf38effbe94f%3A0xfe9494f42c5facfb!2sHAYAL%C4%B0M%20Grup%20mobilya%20ve%20dizayn!5e0!3m2!1str!2str!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3106.326233512345!2d40.5593059!3d38.8960647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406dcf38eff6ef4f%3A0xfe9494f42c5facfb!2sHAYAL%C4%B0M%20Grup%20mobilya%20ve%20dizayn!5e0!3m2!1str!2str!4v1704220000000!5m2!1str!2str" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
@@ -169,15 +115,16 @@
 
     <footer class="bg-slate-900 text-white py-16 px-4">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <h4 class="serif text-2xl font-bold gold-accent italic uppercase tracking-wider text-center md:text-left">HAYALİM DEKOR</h4>
+            <h4 class="serif text-2xl font-bold gold-accent italic uppercase tracking-wider uppercase">HAYALİM DEKOR</h4>
             <div class="flex gap-4">
-                <a href="https://wa.me/905466309919" class="w-12 h-12 bg-green-500 rounded-2xl flex items-center justify-center text-2xl shadow-xl"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.instagram.com/hayalimdekor12" target="_blank" class="w-12 h-12 bg-pink-600 rounded-2xl flex items-center justify-center text-2xl shadow-xl"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/905466309919" class="w-12 h-12 bg-green-500 rounded-2xl flex items-center justify-center text-2xl"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/hayalimdekor12" target="_blank" class="w-12 h-12 bg-pink-600 rounded-2xl flex items-center justify-center text-2xl"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
+        <div class="text-center mt-12 text-slate-700 text-[9px] tracking-[0.3em] uppercase border-t border-slate-800 pt-8 italic">© 2026 Hayalim Dekor - Premium Furniture - Bingöl</div>
     </footer>
 
-    <a href="https://wa.me/905466309919" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl z-[100] animate-bounce"><i class="fab fa-whatsapp text-4xl"></i></a>
+    <a href="https://wa.me/905466309919" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-2xl flex items-center justify-center shadow-2xl z-[100] animate-bounce hover:scale-110 transition"><i class="fab fa-whatsapp text-4xl"></i></a>
 
     <script>
         const categories = [
@@ -189,9 +136,11 @@
             {id: 'masa', name: 'Çalışma Masaları'}
         ];
 
-        // Kategorileri Ekle
         const grid = document.getElementById('categoryGrid');
+        
+        // Kategorileri ve Modalları Oluştur
         categories.forEach(cat => {
+            // Katalog Kutuları
             grid.innerHTML += `
                 <div class="category-card group cursor-pointer" onclick="openModal('modal-${cat.id}')">
                     <div class="h-80 overflow-hidden relative">
@@ -200,18 +149,18 @@
                             <span class="bg-white text-slate-900 px-6 py-2 rounded-full font-bold text-[10px] uppercase shadow-xl">Görüntüle</span>
                         </div>
                     </div>
-                    <div class="p-6 text-center"><h4 class="serif text-2xl font-bold uppercase text-slate-800">${cat.name}</h4></div>
+                    <div class="p-6 text-center uppercase"><h4 class="serif text-2xl font-bold uppercase text-slate-800">${cat.name}</h4></div>
                 </div>
             `;
             
-            // Modal'ları oluştur
+            // Fotoğraf Galerileri
             let imgs = '';
             for(let i=1; i<=9; i++) { imgs += `<img src="${cat.id}-${i}.webp" class="w-full h-72 object-cover rounded-3xl border-2 border-white shadow-lg">`; }
             document.body.innerHTML += `
                 <div id="modal-${cat.id}" class="modal" onclick="closeModal('modal-${cat.id}')">
                     <div class="modal-content" onclick="event.stopPropagation()">
                         <div class="flex justify-between items-center mb-8 border-b border-white/10 pb-6 text-white uppercase">
-                            <h2 class="serif text-3xl font-bold">${cat.name}</h2>
+                            <h2 class="serif text-3xl font-bold uppercase">${cat.name}</h2>
                             <button onclick="closeModal('modal-${cat.id}')" class="text-5xl hover:text-gold">×</button>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">${imgs}</div>
@@ -220,18 +169,31 @@
             `;
         });
 
-        // SİMÜLATÖR FONKSİYONU
-        function applyColor(color, btn) {
-            const overlay = document.getElementById('overlayLayer');
-            overlay.style.backgroundColor = color;
-            
-            // Aktif buton seçimi
-            document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
-            btn.classList.add('active');
-        }
+        // Video Galeri Kutusu ve Modalı
+        grid.innerHTML += `
+            <div class="category-card group cursor-pointer border-2 border-gold/30 bg-slate-900 shadow-xl" onclick="openModal('modal-videolar')">
+                <div class="h-80 overflow-hidden relative flex items-center justify-center">
+                    <div class="text-center z-10"><i class="fas fa-play-circle text-white text-6xl mb-4 opacity-80 group-hover:scale-110 transition duration-500"></i><p class="text-white font-bold tracking-[0.2em] text-[10px] uppercase">VİDEO GALERİ</p></div>
+                </div>
+                <div class="p-6 text-center uppercase"><h4 class="serif text-2xl font-bold gold-accent uppercase text-slate-800 uppercase">ÜRETİM VİDEOLARI</h4></div>
+            </div>
+        `;
 
+        let vids = '';
+        for(let i=1; i<=9; i++) { vids += `<div class="space-y-2 text-center"><video class="vertical-video shadow-2xl" controls playsinline><source src="video-${i}.mp4" type="video/mp4"></video></div>`; }
+        document.body.innerHTML += `
+            <div id="modal-videolar" class="modal" onclick="closeModal('modal-videolar')">
+                <div class="modal-content" onclick="event.stopPropagation()">
+                    <div class="flex justify-between items-center mb-8 border-b border-white/10 pb-6 text-white text-center uppercase"><h2 class="serif text-3xl font-bold gold-accent uppercase tracking-widest text-lg">ÜRETİM VİDEOLARI</h2><button onclick="closeModal('modal-videolar')" class="text-5xl hover:text-gold transition">×</button></div>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-6">${vids}</div>
+                </div>
+            </div>
+        `;
+
+        // Aç/Kapat Fonksiyonları
         function openModal(id) { document.getElementById(id).style.display = "block"; document.body.style.overflow = "hidden"; }
         function closeModal(id) { document.getElementById(id).style.display = "none"; document.body.style.overflow = "auto"; }
+        window.onclick = function(event) { if (event.target.classList.contains('modal')) { closeModal(event.target.id); } }
     </script>
 
 </body>
